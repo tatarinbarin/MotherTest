@@ -1,26 +1,22 @@
-import java.util.Random;
-
 /**
  * класс игрушка
  */
 public class Toy {
 
-    Random rnd = new Random();
+    private int id; // ID
+    private String name; // наименование
+    private int quantity; // количество
+    private double weight; // шанс выпада в %
 
-    protected String id; // ID
-    protected String name; // наименование
-    protected int quantity; // количество
-    protected int luckyChance; // шанс выпада в %
-
-    public Toy(String id, String name, int quantity, int luckyChance) {
+    public Toy(int id, String name, int quantity, double weight) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
-        this.luckyChance = luckyChance;
+        this.weight = weight;
     }
 
     // #region Getters
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -32,15 +28,35 @@ public class Toy {
         return quantity;
     }
 
-    public int getLuckyChance() {
-        return luckyChance;
+    public double getWeight() {
+        return weight;
     }
     // #endregion
 
+
+    //#region Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+    //#endregion
+
+
     @Override
     public String toString() {
-        return String.format("ID:%s - Наименование:%s - Кол-во:%s - Шанс:%s", 
-        id, name, quantity, luckyChance);
+        return String.format("ID:%s - Наименование:%s - Кол-во:%s - Вес:%s", 
+        id, name, quantity, weight);
     }
 
 }

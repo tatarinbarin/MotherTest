@@ -1,8 +1,16 @@
 public class Program {
     public static void main(String[] args) {
-        
-        Toy toy = new Toy("1415D", "Teddy", 3, 20);
+        ToyStore store = new ToyStore();
+        store.addToy(1, "Toy 1", 10, 20);
+        store.addToy(2, "Toy 2", 5, 10);
+        store.addToy(3, "Toy 3", 20, 70);
+        store.setToyWeight(2, 30);
+        store.play();
 
-        System.out.println(toy);
+        try {
+            store.getPrizeToy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
